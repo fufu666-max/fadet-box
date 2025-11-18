@@ -11,6 +11,7 @@ import "solidity-coverage";
 
 import "./tasks/accounts";
 import "./tasks/FHECounter";
+import "./tasks/TimeCapsule";
 
 // Run 'npx hardhat vars setup' to see the list of variables that need to be set
 
@@ -49,13 +50,18 @@ const config: HardhatUserConfig = {
       url: "http://localhost:8545",
     },
     sepolia: {
-      accounts: {
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : {
         mnemonic: MNEMONIC,
         path: "m/44'/60'/0'/0/",
         count: 10,
       },
       chainId: 11155111,
-      url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
+      // Use Infura RPC if INFURA_API_KEY is set, otherwise use public RPC
+      url: INFURA_API_KEY && INFURA_API_KEY !== "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz" 
+        ? `https://sepolia.infura.io/v3/${INFURA_API_KEY}`
+        : "https://rpc.sepolia.org",
+      timeout: 300000, // 300 seconds timeout for deployment
+      httpHeaders: {}, // Add headers if needed
     },
   },
   paths: {
