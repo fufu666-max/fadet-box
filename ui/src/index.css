@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 47% 8%;
+    --foreground: 180 100% 95%;
+
+    --card: 222 47% 10%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 180 82% 55%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 40% 15%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 222 40% 18%;
+    --muted-foreground: 180 20% 70%;
+
+    --accent: 45 100% 60%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 222 40% 20%;
+    --input: 222 40% 20%;
+    --ring: 180 82% 55%;
+
+    --radius: 0.75rem;
+
+    /* Time Capsule specific tokens */
+    --vault-glow: 180 82% 55%;
+    --lock-gold: 45 100% 60%;
+    --unlock-cyan: 180 82% 55%;
+    --countdown-glow: 45 100% 60%;
+    
+    /* Gradients */
+    --gradient-vault: linear-gradient(135deg, hsl(222 47% 10%), hsl(222 47% 8%));
+    --gradient-glow: linear-gradient(135deg, hsl(180 82% 55% / 0.2), hsl(45 100% 60% / 0.2));
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

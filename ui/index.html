@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Load Zama Relayer SDK UMD bundle before the app -->
+    <!-- This sets up window.relayerSDK which is required by @zama-fhe/relayer-sdk/bundle -->
+    <script src="https://cdn.zama.ai/relayer-sdk-js/0.2.0/relayer-sdk-js.umd.cjs" type="text/javascript"></script>
+    
+    <title>FHE Time Capsule - Lock the Present, Reveal the Future</title>
+    <meta name="description" content="Encrypt messages and data to be automatically decrypted after a preset time using FHE technology. Lock the present, reveal the future." />
+    <meta name="author" content="FHE Time Capsule" />
+
+    <meta property="og:title" content="FHE Time Capsule - Lock the Present, Reveal the Future" />
+    <meta property="og:description" content="Encrypt messages and data to be automatically decrypted after a preset time using FHE technology." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
